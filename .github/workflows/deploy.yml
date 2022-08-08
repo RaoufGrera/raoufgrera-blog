@@ -20,7 +20,7 @@ jobs:
         port: 22
         script: |
           cd /var/www/raoufgrera
-          git pull origin master
+          git pull raouf master
           git status
           npm install -g yarn
           yarn build

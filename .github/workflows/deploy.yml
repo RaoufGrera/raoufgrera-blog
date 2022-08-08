@@ -22,5 +22,5 @@ jobs:
           cd /var/www/raoufgrera
           git pull blog master
           git status
-          npm install -g yarn
-          yarn build
+          npm run build
+          pm2 restart -0

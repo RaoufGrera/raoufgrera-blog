@@ -8,10 +8,19 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-
     steps:
     - uses: actions/checkout@v3
-    
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: raoufgrera.com
+        username: ${{ secrets.BLOG_NAME }}
+        key: ${{ secrets.BLOG_SECRET }}
+        port: ${{ secrets.BLOG_PORT }}
+        script: |
+          cd ${{ secrets.BLOG_DIR }}
+          git pull origin master
+          git status
+          npm install -g yarn
+          yarn build

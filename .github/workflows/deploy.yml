@@ -15,11 +15,11 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: raoufgrera.com
-        username: ${{ secrets.BLOG_NAME }}
+        username: root
         key: ${{ secrets.BLOG_SECRET }}
-        port: ${{ secrets.BLOG_PORT }}
+        port: 22
         script: |
-          cd ${{ secrets.BLOG_DIR }}
+          cd /var/www/raoufgrera
           git pull origin master
           git status
           npm install -g yarn

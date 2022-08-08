@@ -21,5 +21,6 @@ jobs:
         script: |
           cd /var/www/raoufgrera
           git pull blog master
-          npm run build
+          npx next build
+          npx next start
           pm2 restart -0

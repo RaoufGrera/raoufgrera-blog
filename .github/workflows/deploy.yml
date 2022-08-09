@@ -22,5 +22,4 @@ jobs:
           cd /var/www/raoufgrera
           git pull blog master
           npx next build
-          npx next start
           pm2 restart -0

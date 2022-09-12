@@ -1,102 +1,39 @@
 ---
-title: 'test app'
+title: 'First Day to learn Rust and Go lang with C# and C++'
 date: 2022-08-18T15:32:14Z
 lastmod: '2022-08-01'
-tags: ['next-js', 'tailwind', 'guide']
+tags: ['rust', 'golang', 'c++','c#']
 draft: false
-summary: 'An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more'
-layout: PostSimple
+summary: 'I will updated every time \n An overview about write code with diffrent language - study togother to see diffrent and know them litle bit'
 bibliography: references-data.bib
-canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/new-features-in-v1/
+images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
 ---
 
 ## Overview
+![tailwind-nextjs-banner](/static/images/twitter-card.png)
 
-A post on the new features introduced in v1.0. New features:
+# Tailwind Nextjs Starter Blog
 
-<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
-First load JS decreased from 43kB to 39kB despite all the new features added!^[With the new changes in Nextjs 12, first load JS increase to 45kB.]
+This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) blogging starter template. Probably the most feature-rich Next.js markdown blogging template out there. Comes out of the box configured with the latest technologies to make technical writing a breeze. Easily configurable and customizable. Perfect as a replacement to existing Jekyll and Hugo individual blogs.
 
-See [upgrade guide](#upgrade-guide) below if you are migrating from v0 version of the template.
+Check out the documentation below to get started.
 
-## Theme colors
+Facing issues? Check the [FAQ page](https://github.com/timlrx/tailwind-nextjs-starter-blog/wiki) and do a search on past issues. Feel free to open a new issue if none has been posted previously.
 
-You can easily modify the theme color by changing the primary attribute in the tailwind config file:
+Feature request? Check the past discussions to see if it has been brought up previously. Otherwise, feel free to start a new discussion thread. All ideas are welcomed!
 
-```js:tailwind.config.js
-theme: {
-    colors: {
-      primary: colors.teal,
-      gray: colors.neutral,
-      ...
-    }
-  ...
-}
-```
+## Examples
 
-The primary color attribute should be assigned an object with keys from 50, 100, 200 ... 900 and the corresponding color code values.
+- [Demo Blog](https://tailwind-nextjs-starter-blog.vercel.app/) - this repo
+- [My personal blog](https://www.timlrx.com) - modified to auto-generate blog posts with dates
+- [Aloisdg's cookbook](https://tambouille.vercel.app/) - with pictures and recipes!
+- [GautierArcin's demo with next translate](https://tailwind-nextjs-starter-blog-seven.vercel.app/) - includes translation of mdx posts, [source code](https://github.com/GautierArcin/tailwind-nextjs-starter-blog/tree/demo/next-translate)
+- [David Levai's digital garden](https://davidlevai.com/) - customized design and added email subscriptions
+- [Thinh's Corner](https://thinhcorner.com/) - [customized layout](https://github.com/Th1nhNg0/th1nhng0.vercel.app/blob/5e73a420828d82f01e7147512a2c3273c4ec19f8/layouts/PostLayout.js) with sticky side table of contents
 
-Tailwind includes great default color palettes that can be used for theming your own website. Check out [customizing colors documentation page](https://tailwindcss.com/docs/customizing-colors) for the full range of options.
-
-Migrating from v1? You can revert to the previous theme by setting `primary` to `colors.sky` (Tailwind 2.2.2 and above, otherwise `colors.lightBlue`) and changing gray to `colors.gray`.
-
-From v1.1.2+, you can also customize the style of your code blocks easily by modifying the `css/prism.css` stylesheet. Token classnames are compatible with prismjs
-so you can copy and adapt token styles from a prismjs stylesheet e.g. [prism themes](https://github.com/PrismJS/prism-themes).
-
-## Xdm MDX compiler
-
-We switched the MDX bundler from [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) to [mdx-bundler](https://github.com/kentcdodds/mdx-bundler).
-This uses [xdm](https://github.com/wooorm/xdm) under the hood, the latest micromark 3 and remark, rehype libraries.
-
-**Warning:** If you were using custom remark or rehype libraries, please upgrade to micromark 3 compatible ones. If you are upgrading, please delete `node_modules` and `package-lock.json` to avoid having past dependencies related issues.
-
-[xdm](https://github.com/wooorm/xdm) contains multiple improvements over [@mdx-js/mdx](https://github.com/mdx-js/mdx), the compiler used internally by next-mdx-remote, but there might be some breaking behaviour changes.
-Please check your markdown output to verify.
-
-Some new possibilities include loading components directly in the mdx file using the import syntax and including js code which could be compiled and bundled at the build step.
-
-For example, the following jsx snippet can be used directly in an MDX file to render the page title component:
-
-```jsx
-import PageTitle from './PageTitle.js'
-;<PageTitle> Using JSX components in MDX </PageTitle>
-```
-
-import PageTitle from './PageTitle.js'
-
-<PageTitle> Using JSX components in MDX </PageTitle>
-
-The default configuration resolves all components relative to the `components` directory.
-
-**Note**:
-Components which require external image loaders also require additional esbuild configuration.
-Components which are dependent on global application state on lifecycle like the Nextjs `Link` component would also not work with this setup as each mdx file is built independently.
-For such cases, it is better to use component substitution.
-
-## Table of contents component
-
-Inspired by [Docusaurus](https://docusaurus.io/docs/next/markdown-features/inline-toc) and Gatsby's [gatsby-remark-table-of-contents](https://www.gatsbyjs.com/plugins/gatsby-remark-table-of-contents/),
-the `toc` variable containing all the top level headings of the document is passed to the MDX file and can be styled accordingly.
-To make generating a table of contents (TOC) simple, you can use the existing `TOCInline` component.
-
-For example, the TOC in this post was generated with the following code:
-
-```jsx
-<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
-```
-
-You can customise the headings that are displayed by configuring the `fromHeading` and `toHeading` props, or exclude particular headings
-by passing a string or a string array to the `exclude` prop. By default, all headings that are of depth 3 or smaller are indented. This can be configured by changing the `indentDepth` property.
-A `asDisclosure` prop can be used to render the TOC within an expandable disclosure element.
-
-Here's the full TOC rendered in a disclosure element.
-
-```jsx
-<TOCInline toc={props.toc} asDisclosure />
-```
-
-<TOCInline toc={props.toc} asDisclosure />
+Using the template? Feel free to create a PR and add your blog to this list.
 
 ## Layouts
 
@@ -150,21 +87,11 @@ The `DEFAULT_LAYOUT` for blog posts page is set to `PostLayout`.
 `layout` is mapped to wrapper which wraps the entire MDX content.
 
 ```jsx
-export const MDXComponents = {
-  Image,
-  a: CustomLink,
-  pre: Pre,
-  wrapper: ({ components, layout, ...rest }) => {
-    const Layout = require(`../layouts/${layout}`).default
-    return <Layout {...rest} />
-  },
-}
+ let mut line = String::new();
+    io::stdin().read_line(&mut line).unwrap();
+    let number: i32 = line.trim().parse().unwrap();
+    return number;
 
-export const MDXLayoutRenderer = ({ layout, mdxSource, ...rest }) => {
-  const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
-
-  return <MDXLayout layout={layout} components={MDXComponents} {...rest} />
-}
 ```
 
 Use the `MDXLayoutRenderer` component on a page where you want to accept a layout name to map to the desired layout.

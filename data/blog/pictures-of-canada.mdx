@@ -1,82 +1,71 @@
 ---
-title: O Canada
-date: '2017-07-15'
-tags: ['holiday', 'canada', 'images']
+title: Postal Addressing project
+date: '2022-11-27'
+tags: ['Libya Post', 'Mapbox', 'openstreetmap','javascript']
 draft: false
-summary: The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
+summary: The Libya postal addressing project was developed better than the Dubai application using the best technologies and standards.
 ---
+# Postal Addressing project
+#### _web application_
+[NPA.ly](https://npa.ly/)
+#### _National post addressingfor libya._ 
+## Introducation
+ In the year 2021, the completion of the project was started by the Libya Post Company, in cooperation with the General Authority for Communications, and I was assigned to head the programming and development team, without team. This resulted in the official launch of the project, and a web and mobile application and API service were launched.
 
-# O Canada
+## Development
 
-The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
+Before developing the application, most of the addressing applications in some countries were reviewed, such as the application of Saudi Arabia, Ghana and the Dubai, in order to determine the most important services that the addressing application will provide in Libya
+The application for the Dubai was one of the best applications, so it was focused on during the development of the application for Libya, while avoiding some defects and services that are not required, including that the Dubai  application provides navigation within the application using Google paid services. The Dubai application also provides the service of using the application in offline mode.
 
-Features images served using `next/image` component. The locally stored images are located in a folder with the following path: `/static/images/canada/[filename].jpg`
+## Services
+The application was developed in a very short period of time, less than two months. A mobile application and a web application were developed with the design of the database, the design of the digital map, and the provision of the server with the tools and technologies necessary to run the project.
+The most important services provided by the postal addressing application: -
+* Know the postal code of any building.
+* Search for a specific zip code.
+* post code Determine a path for a specific postal code through the navigation applications available to the user.
+* Providing information on the boundaries of postal areas and areas of the addressing system.
+* Provide a Public Zip Code API. This API was used by the ECR to verify the postal code.
 
-Since we are using mdx, we can create a simple responsive flexbox grid to display our images with a few tailwind css classes.
 
----
 
-# Gallery
+## Tools and techniques used
+The most important tools and techniques used in project development:
 
-<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Maple](/static/images/canada/maple.jpg)
-  </div>
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Lake](/static/images/canada/lake.jpg)
-  </div>
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Mountains](/static/images/canada/mountains.jpg)
-  </div>
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Toronto](/static/images/canada/toronto.jpg)
-  </div>
-</div>
 
-# Implementation
+| Plugin | README |
+| ------ | ------ |
+| QGIS | [https://www.qgis.org/en/site/][PlDb] |
+| PostgreSQL | [https://www.postgresql.org/][PlGh] |
+| PostGIS | [https://postgis.net/][PlGd] |
+| Mapbox | [https://www.mapbox.com/][PlOd] |
+| Flutter | [https://flutter.io/][PlMe] |
+| Laravel | [https://laravel.com/][PlGa] |
 
-```js
-<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Maple](/static/images/canada/maple.jpg)
-  </div>
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Lake](/static/images/canada/lake.jpg)
-  </div>
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Mountains](/static/images/canada/mountains.jpg)
-  </div>
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    ![Toronto](/static/images/canada/toronto.jpg)
-  </div>
-</div>
-```
+## MapBox
+When choosing a basemap, the map box provider was chosen for several reasons, including:
+* The ability to modify and control the base map and build special layers using map box studio.
+* The digital map is based on an open geographic information database openstreetmap.
+* Unstable prices for Google Maps, as happened with the state of Ghana, after Google raised the prices of its services to up to 1400% for some services.
 
-With MDX v2, one can interleave markdown in jsx as shown in the example code.
 
-### Photo Credits
+## Comparisons
+### _Dutchland_
+A comparison between the digital map of the postal addressing project for the State of Libya and the State of Germany, which obtained the third rank according to the classification of the Universal Postal Union.
 
-<div>
-  Maple photo by [Guillaume
-  Jaillet](https://unsplash.com/@i_am_g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Mountains photo by [John
-  Lee](https://unsplash.com/@john_artifexfilms?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Lake photo by [Tj
-  Holowaychuk](https://unsplash.com/@tjholowaychuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Toronto photo by [Matthew
-  Henry](https://unsplash.com/@matthewhenry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
+
+### _Dubai_
+The Emirate of Dubai, in its first update to the application after launching the application for Libya, canceled the route selection service within the application, and it became used in the same way as the application of the State of Libya, and it also canceled the service of using the application in offline mode.
+
+
+## Cost
+The project development process was carried out internally by the company's developers, and a financial reward of about $2,000 was allocated to them. For mobile application developer, web application, API service, server management and configuration.
+The Libya Post Company did not fulfill its promises, and all the procedures of the former Chairman of the Board of Directors were stopped by the new management, and the award decision was not implemented. Knowing that the engineers saved about 40 thousand dollars if it was implemented by the private sector.
+
+## Stop  project
+Finally, the postal addressing project was stopped by the new administration, and the dues of the engineers who implemented the project, which were determined and approved by the previous chairman of the board, were not implemented. A collective resignation was also submitted by the project manager, IT department manager and programming team leader.
+
+
+## Prepared by:
+### _Abdalraouf Grera_
+Former Head of Programming Team for the Postal Addressing Project
+From Libya the seventh country in corruption, according to the classification of the Global Corruption Index 2021.

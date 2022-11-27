@@ -8,12 +8,10 @@ const projectsData = [
     href: 'https://www.google.com',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Postal addressing project',
+    description: `The Libya postal addressing project was developed better than the Dubai application using the best technologies and standards.`,
+    imgSrc: '/static/images/postal/logo_npa.png',
+    href: '/blog/postal-addressing-project-libya',
   },
 ]
 

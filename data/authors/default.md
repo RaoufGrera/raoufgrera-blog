@@ -31,4 +31,4 @@ A messaging and social media app similar to Slowly
 
 ## Now
 
-Now I focus to learn the RUST language and the Typescript language.
+Now I focus to learn the RUST language.

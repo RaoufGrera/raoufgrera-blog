@@ -15,7 +15,7 @@ github: https://github.com/raoufgrera
 * Team leader for postal addressing application for Libya Post.
 * Web application developer for the SDI Libya project.
 * have one of the leading job site in Libya, with 45K followers on Facebook.
-* graduated with second-class honors, more than 75%.
+* graduated with second-class honors.
 
 ## My side projects
 
